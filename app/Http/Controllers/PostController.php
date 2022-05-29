@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+
 use App\Http\Requests\PostRequest; // useする
+
 
 class PostController extends Controller
 {
     public function index(Post $post)
     {
+
         return view('posts/index')->with(['posts' => $post->getPaginate()]);
     }
 
@@ -40,5 +42,5 @@ class PostController extends Controller
     return redirect('/posts/' . $post->id);
 }
     
-}
+
 ?>
