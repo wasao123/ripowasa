@@ -20,3 +20,7 @@ Route::post('/posts', 'PostController@store');
 
 Route::get('/posts/{post}/edit', 'PostController@edit');
 Route::put('/posts/{post}', 'PostController@update');
+<<<<<<< HEAD
+=======
+
+>>>>>>> dfd2af4601fe600c25972562944e33921bcb2ae8
