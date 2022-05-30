@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+
         
         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
              @csrf
@@ -16,6 +17,7 @@
         
         </form>
         
+
         <p class="create">[<a href='/posts/create'>create</a>]</p>
         <div class='posts'>
             @foreach ($posts as $post)
@@ -29,6 +31,7 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+
         
         <script>
         function deletePost(e){
@@ -38,5 +41,6 @@
             }
         }
         </script>
+
     </body>
 </html>
