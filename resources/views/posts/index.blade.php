@@ -8,7 +8,20 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+<<<<<<< HEAD
       
+=======
+
+        
+        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+             @csrf
+             @method('DELETE')
+             <button type="submit">delete</button> 
+        
+        </form>
+        
+
+>>>>>>> 9255c91e220c84b129bdf305dd6d05c9d0051593
         <p class="create">[<a href='/posts/create'>create</a>]</p>
         <div class='posts'>
             @foreach ($posts as $post)
@@ -31,6 +44,10 @@
             {{ $posts->links() }}
         </div>
 
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 9255c91e220c84b129bdf305dd6d05c9d0051593
         <script>
         function deletePost(id){
             "use strict";
@@ -39,5 +56,6 @@
             }
         }
         </script>
+
     </body>
 </html>
