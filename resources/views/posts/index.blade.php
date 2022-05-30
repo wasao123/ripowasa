@@ -8,11 +8,20 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+        
+        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+             @csrf
+             @method('DELETE')
+             <button type="submit">delete</button> 
+        
+        </form>
+        
         <p class="create">[<a href='/posts/create'>create</a>]</p>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
                     <h2 class='title'><a href="/posts/{{ $post->id }}/edit">{{ $post->title }}</a></h2>
+
                     <p class='body'>{{ $post->body }}</p>
                 </div>
             @endforeach
@@ -20,5 +29,14 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+        
+        <script>
+        function deletePost(e){
+            "use strict";
+            if(confirm("消去すると復元できません。\n本当に消去しますか？")){
+                document.getElementById("from_delete").submit();
+            }
+        }
+        </script>
     </body>
 </html>
